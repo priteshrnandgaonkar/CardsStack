@@ -19,16 +19,22 @@ public struct Configuration {
     let collapsedHeight:Float
     let expandedHeight:Float
     let cardHeight: Float
-    let downwardThreshold:Float
-    let upwardThreshold:Float
+    let downwardThreshold: Float
+    let upwardThreshold: Float
+    let verticalSpacing: Float
+    let leftSpacing: Float
+    let rightSpacing: Float
     
-    public init(cardOffset: Float, collapsedHeight: Float, expandedHeight: Float, cardHeight: Float, downwardThreshold: Float, upwardThreshold: Float) {
+    public init(cardOffset: Float, collapsedHeight: Float, expandedHeight: Float, cardHeight: Float, downwardThreshold: Float, upwardThreshold: Float, leftSpacing: Float = 8.0, rightSpacing: Float = 8.0, verticalSpacing: Float = 8.0) {
         self.cardOffset = cardOffset
         self.collapsedHeight = collapsedHeight
         self.expandedHeight = expandedHeight
         self.downwardThreshold = downwardThreshold
         self.upwardThreshold = upwardThreshold
         self.cardHeight = cardHeight
+        self.verticalSpacing = verticalSpacing
+        self.leftSpacing = leftSpacing
+        self.rightSpacing = rightSpacing
     }
 }
 

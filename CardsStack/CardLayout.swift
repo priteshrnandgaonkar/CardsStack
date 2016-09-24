@@ -42,7 +42,7 @@ class CardLayout: UICollectionViewLayout {
             let layout = UICollectionViewLayoutAttributes(forCellWith: IndexPath(row: index, section: 0))
             layout.frame = frameFor(index: index, cardState: delegate!.cardState, translation: delegate.fractionToMove)
             if delegate.cardState == .Expanded {
-                contentHeight += 8 + layout.frame.size.height
+                contentHeight += CGFloat(delegate.configuration.verticalSpacing) + layout.frame.size.height
             }
             layout.zIndex = index
             layout.isHidden = false
@@ -52,18 +52,6 @@ class CardLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-//        guard let array = super.layoutAttributesForElements(in: rect) else {
-//            fatalError()
-//        }
-//        
-//        for attribute in array {
-//            let frame = cachedAttributes[attribute.indexPath.row].frame
-//            attribute.frame = frame
-//
-//        }
-//
-//        return array
-
 
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
         
@@ -85,26 +73,26 @@ class CardLayout: UICollectionViewLayout {
     }
     
     func frameFor(index: Int, cardState: CardState, translation: Float) -> CGRect {
-        var frame = CGRect(origin: CGPoint(x: 8, y:0), size: CGSize(width: UIScreen.main.bounds.width - 16, height: 200))
+        var frame = CGRect(origin: CGPoint(x: CGFloat(delegate.configuration.leftSpacing), y:0), size: CGSize(width: UIScreen.main.bounds.width - CGFloat(delegate.configuration.leftSpacing + delegate.configuration.rightSpacing), height: CGFloat(delegate.configuration.cardHeight)))
         var frameOrigin = frame.origin
         switch cardState {
         case .Expanded:
             let val = (delegate.configuration.cardHeight * Float(index))
-            frameOrigin.y = CGFloat(Float(8 * (index)) + val)
+            frameOrigin.y = CGFloat(Float(delegate.configuration.verticalSpacing * Float(index)) + val)
             
         case .InTransit:
             if index > 0 {
                 
-                let collapsedY = 8.0 + (delegate.configuration.cardOffset * Float(index))
-                let finalDistToMove = Swift.abs(((8.0 + delegate.configuration.cardHeight) * Float(index)) - collapsedY)
+                let collapsedY = delegate.configuration.verticalSpacing + (delegate.configuration.cardOffset * Float(index))
+                let finalDistToMove = Swift.abs(((delegate.configuration.verticalSpacing + delegate.configuration.cardHeight) * Float(index)) - collapsedY)
                 let fract = (finalDistToMove * translation)/(delegate.configuration.expandedHeight - delegate.configuration.collapsedHeight)
-                let val = CGFloat(8 + (delegate.configuration.cardOffset * Float(index)) + fract)
+                let val = CGFloat(delegate.configuration.verticalSpacing + (delegate.configuration.cardOffset * Float(index)) + fract)
                 frameOrigin.y = val
             }
             
         case .Collapsed:
             if index > 0 {
-                frameOrigin.y = CGFloat(8 + (delegate.configuration.cardOffset * Float(index)))
+                frameOrigin.y = CGFloat(delegate.configuration.verticalSpacing + (delegate.configuration.cardOffset * Float(index)))
             }
         }
         frame.origin = frameOrigin
