@@ -20,7 +20,6 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
     var fractionToMove:Float = 0
     var cardState: CardState {
         didSet {
-            print("In did set")
             switch cardState {
             case .InTransit:
                 tapGesture.isEnabled = false
@@ -123,11 +122,11 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
                 self.collectionView?.isScrollEnabled = false
                 
                 
-                self.collectionView?.performBatchUpdates({
+//                self.collectionView?.performBatchUpdates({
                     self.collectionView?.collectionViewLayout.invalidateLayout()
                     self.collectionView?.superview?.layoutIfNeeded()
                     
-                    }, completion: nil)
+//                    }, completion: nil)
                 
             case .cancelled:
                 fallthrough
