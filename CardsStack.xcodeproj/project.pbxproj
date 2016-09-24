@@ -10,6 +10,9 @@
 		8432DC161D96D11400A3A0E2 /* CardsStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432DC0C1D96D11400A3A0E2 /* CardsStack.framework */; };
 		8432DC1B1D96D11400A3A0E2 /* CardsStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC1A1D96D11400A3A0E2 /* CardsStackTests.swift */; };
 		8432DC1D1D96D11400A3A0E2 /* CardsStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 8432DC0F1D96D11400A3A0E2 /* CardsStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8432DC291D96D18900A3A0E2 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC261D96D18900A3A0E2 /* CardLayout.swift */; };
+		8432DC2A1D96D18900A3A0E2 /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC271D96D18900A3A0E2 /* CardsManager.swift */; };
+		8432DC2B1D96D18900A3A0E2 /* CardsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC281D96D18900A3A0E2 /* CardsStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		8432DC151D96D11400A3A0E2 /* CardsStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432DC1A1D96D11400A3A0E2 /* CardsStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsStackTests.swift; sourceTree = "<group>"; };
 		8432DC1C1D96D11400A3A0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8432DC261D96D18900A3A0E2 /* CardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
+		8432DC271D96D18900A3A0E2 /* CardsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
+		8432DC281D96D18900A3A0E2 /* CardsStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				8432DC0F1D96D11400A3A0E2 /* CardsStack.h */,
+				8432DC261D96D18900A3A0E2 /* CardLayout.swift */,
+				8432DC271D96D18900A3A0E2 /* CardsManager.swift */,
+				8432DC281D96D18900A3A0E2 /* CardsStack.swift */,
 				8432DC101D96D11400A3A0E2 /* Info.plist */,
 			);
 			path = CardsStack;
@@ -149,6 +158,7 @@
 					8432DC0B1D96D11400A3A0E2 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TB2282VDLT;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					8432DC141D96D11400A3A0E2 = {
@@ -198,6 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8432DC2B1D96D18900A3A0E2 /* CardsStack.swift in Sources */,
+				8432DC291D96D18900A3A0E2 /* CardLayout.swift in Sources */,
+				8432DC2A1D96D18900A3A0E2 /* CardsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +335,7 @@
 		8432DC211D96D11400A3A0E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = TB2282VDLT;
@@ -334,6 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PN.CardsStack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +356,7 @@
 		8432DC221D96D11400A3A0E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = TB2282VDLT;
@@ -360,6 +376,7 @@
 		8432DC241D96D11400A3A0E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = TB2282VDLT;
 				INFOPLIST_FILE = CardsStackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +389,7 @@
 		8432DC251D96D11400A3A0E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = TB2282VDLT;
 				INFOPLIST_FILE = CardsStackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
