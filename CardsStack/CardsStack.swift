@@ -9,23 +9,23 @@
 import Foundation
 import UIKit
 
-public enum CardsPosition {
+@objc public enum CardsPosition: Int {
     case Collapsed
     case Expanded
 }
 
 public struct Configuration {
-    let cardOffset: Float
-    let collapsedHeight:Float
-    let expandedHeight:Float
-    let cardHeight: Float
-    let downwardThreshold: Float
-    let upwardThreshold: Float
-    let verticalSpacing: Float
-    let leftSpacing: Float
-    let rightSpacing: Float
+    public let cardOffset: Float
+    public let collapsedHeight:Float
+    public let expandedHeight:Float
+    public let cardHeight: Float
+    public let downwardThreshold: Float
+    public let upwardThreshold: Float
+    public let verticalSpacing: Float
+    public let leftSpacing: Float
+    public let rightSpacing: Float
     
-    public init(cardOffset: Float, collapsedHeight: Float, expandedHeight: Float, cardHeight: Float, downwardThreshold: Float, upwardThreshold: Float, leftSpacing: Float = 8.0, rightSpacing: Float = 8.0, verticalSpacing: Float = 8.0) {
+    public init(cardOffset: Float, collapsedHeight: Float, expandedHeight: Float, cardHeight: Float, downwardThreshold: Float = 20, upwardThreshold: Float = 20, leftSpacing: Float = 8.0, rightSpacing: Float = 8.0, verticalSpacing: Float = 8.0) {
         self.cardOffset = cardOffset
         self.collapsedHeight = collapsedHeight
         self.expandedHeight = expandedHeight
@@ -40,6 +40,7 @@ public struct Configuration {
 
 @objc public protocol CardsManagerDelegate {
     
+    @objc optional func cardsPositionChangedTo(position: CardsPosition)
     @objc optional func tappedOnCardsStack(cardsCollectionView: UICollectionView)
     @objc optional func cardsCollectionView(_ cardsCollectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     @objc optional func cardsCollectionView(_ cardsCollectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
@@ -56,7 +57,7 @@ public class CardsStack {
     
     internal(set) var position: CardsPosition
     
-   public convenience init() {
+    public convenience init() {
         let configuration = Configuration(cardOffset: 40, collapsedHeight: 200, expandedHeight: 500, cardHeight: 200, downwardThreshold: 20, upwardThreshold: 20)
 
         self.init(cardsState: .Collapsed, configuration: configuration, collectionView: nil, collectionViewHeight: nil)
@@ -69,7 +70,7 @@ public class CardsStack {
         cardsManager.cardsDelegate = self
     }
     
-    public func updateView(with position: CardsPosition) {
+    public func changeCardsPosition(to position: CardsPosition) {
         cardsManager.updateView(with: position)
     }
 }

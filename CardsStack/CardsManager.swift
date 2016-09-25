@@ -62,6 +62,17 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
         }
     }
     
+    func cardsPositionFromCardsState(state: CardState) -> CardsPosition? {
+        switch state {
+        case .Collapsed:
+            return CardsPosition.Expanded
+        case .Expanded:
+            return CardsPosition.Collapsed
+        default:
+            return nil
+        }
+    }
+
     init(cardState: CardsPosition, configuration: Configuration, collectionView: UICollectionView?, heightConstraint: NSLayoutConstraint?) {
         
         switch cardState {
@@ -121,12 +132,8 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
                 self.fractionToMove = Float(heightConstraint.constant - CGFloat(self.configuration.collapsedHeight))
                 self.collectionView?.isScrollEnabled = false
                 
-                
-//                self.collectionView?.performBatchUpdates({
-                    self.collectionView?.collectionViewLayout.invalidateLayout()
-                    self.collectionView?.superview?.layoutIfNeeded()
-                    
-//                    }, completion: nil)
+                self.collectionView?.collectionViewLayout.invalidateLayout()
+                self.collectionView?.superview?.layoutIfNeeded()
                 
             case .cancelled:
                 fallthrough
@@ -160,9 +167,11 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
                 }
                 self.collectionView?.isScrollEnabled = !panGesture.isEnabled
                 
-                UIView.animate(withDuration: 0.3, animations: {
+                UIView.animate(withDuration: 0.3, animations: { 
                     self.collectionView?.collectionViewLayout.invalidateLayout()
                     self.collectionView?.superview?.layoutIfNeeded()
+                    }, completion: { (finished) in
+                        self.triggerStateCallBack()
                 })
     
             default:
@@ -173,7 +182,12 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
             self.panGesture.setTranslation(CGPoint.zero, in: self.collectionView?.superview)
         }
     
-    
+    func triggerStateCallBack() {
+        guard let position = cardsPositionFromCardsState(state: cardState) else {
+            return
+        }
+        delegate?.cardsPositionChangedTo?(position: position)
+    }
     
     func updateView(with position: CardsPosition) {
         var ht:Float = 0.0
@@ -199,6 +213,8 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
             UIView.animate(withDuration: 0.3, animations: {
                 weakSelf.collectionView?.collectionViewLayout.invalidateLayout()
                 weakSelf.collectionView?.superview?.layoutIfNeeded()
+                }, completion: { (finished) in
+                    weakSelf.triggerStateCallBack()
             })
         }
     }
