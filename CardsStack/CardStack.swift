@@ -1,5 +1,5 @@
 //
-//  CardsStack.swift
+//  CardStack.swift
 //  DynamicStackOfCards
 //
 //  Created by housing on 9/24/16.
@@ -46,7 +46,7 @@ public struct Configuration {
     @objc optional func cardsCollectionView(_ cardsCollectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
 }
 
-public class CardsStack {
+public class CardStack {
     
     public weak var delegate: CardsManagerDelegate? = nil {
         didSet {

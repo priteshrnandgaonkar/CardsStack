@@ -12,7 +12,7 @@
 		8432DC1D1D96D11400A3A0E2 /* CardsStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 8432DC0F1D96D11400A3A0E2 /* CardsStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8432DC291D96D18900A3A0E2 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC261D96D18900A3A0E2 /* CardLayout.swift */; };
 		8432DC2A1D96D18900A3A0E2 /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC271D96D18900A3A0E2 /* CardsManager.swift */; };
-		8432DC2B1D96D18900A3A0E2 /* CardsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC281D96D18900A3A0E2 /* CardsStack.swift */; };
+		8432DC2B1D96D18900A3A0E2 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC281D96D18900A3A0E2 /* CardStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 		8432DC1C1D96D11400A3A0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8432DC261D96D18900A3A0E2 /* CardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		8432DC271D96D18900A3A0E2 /* CardsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
-		8432DC281D96D18900A3A0E2 /* CardsStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsStack.swift; sourceTree = "<group>"; };
+		8432DC281D96D18900A3A0E2 /* CardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 		8432DC021D96D11400A3A0E2 = {
 			isa = PBXGroup;
 			children = (
-				8432DC0E1D96D11400A3A0E2 /* CardsStack */,
+				8432DC0E1D96D11400A3A0E2 /* CardStack */,
 				8432DC191D96D11400A3A0E2 /* CardsStackTests */,
 				8432DC0D1D96D11400A3A0E2 /* Products */,
 			);
@@ -74,15 +74,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8432DC0E1D96D11400A3A0E2 /* CardsStack */ = {
+		8432DC0E1D96D11400A3A0E2 /* CardStack */ = {
 			isa = PBXGroup;
 			children = (
 				8432DC0F1D96D11400A3A0E2 /* CardsStack.h */,
 				8432DC261D96D18900A3A0E2 /* CardLayout.swift */,
 				8432DC271D96D18900A3A0E2 /* CardsManager.swift */,
-				8432DC281D96D18900A3A0E2 /* CardsStack.swift */,
+				8432DC281D96D18900A3A0E2 /* CardStack.swift */,
 				8432DC101D96D11400A3A0E2 /* Info.plist */,
 			);
+			name = CardStack;
 			path = CardsStack;
 			sourceTree = "<group>";
 		};
@@ -208,7 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8432DC2B1D96D18900A3A0E2 /* CardsStack.swift in Sources */,
+				8432DC2B1D96D18900A3A0E2 /* CardStack.swift in Sources */,
 				8432DC291D96D18900A3A0E2 /* CardLayout.swift in Sources */,
 				8432DC2A1D96D18900A3A0E2 /* CardsManager.swift in Sources */,
 			);
@@ -418,6 +419,7 @@
 				8432DC221D96D11400A3A0E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8432DC231D96D11400A3A0E2 /* Build configuration list for PBXNativeTarget "CardsStackTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +428,7 @@
 				8432DC251D96D11400A3A0E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
