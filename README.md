@@ -41,7 +41,7 @@ public struct Configuration {
     public let leftSpacing: Float
     public let rightSpacing: Float
     
-    public init(cardOffset: Float, collapsedHeight: Float, expandedHeight: Float, cardHeight: Float, downwardThreshold: Float, upwardThreshold: Float, leftSpacing: Float = 8.0, rightSpacing: Float = 8.0, verticalSpacing: Float = 8.0) {
+    public init(cardOffset: Float, collapsedHeight: Float, expandedHeight: Float, cardHeight: Float, downwardThreshold: Float = 20, upwardThreshold: Float = 20, leftSpacing: Float = 8.0, rightSpacing: Float = 8.0, verticalSpacing: Float = 8.0) {
         self.cardOffset = cardOffset
         self.collapsedHeight = collapsedHeight
         self.expandedHeight = expandedHeight

@@ -39,7 +39,7 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
     weak var delegate: CardsManagerDelegate?
     weak var collectionView: UICollectionView?
     weak var cardsCollectionViewHeight: NSLayoutConstraint?
-    weak var cardsDelegate: CardsStack? = nil
+    weak var cardsDelegate: CardStack? = nil
 
     var panGesture = UIPanGestureRecognizer()
     var tapGesture = UITapGestureRecognizer()
@@ -102,7 +102,6 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
     }
     
     func tappedCard(tapGesture: UITapGestureRecognizer) {
-        print("Tapped")
         guard let cardsCollectionView = collectionView else {
             return
         }
@@ -199,7 +198,6 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
         case .Expanded:
             ht = configuration.expandedHeight
         default:
-            print("Returned")
             return
         }
         
