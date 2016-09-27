@@ -93,6 +93,7 @@ class CardsManager: NSObject, CardLayoutDelegate {
         cardLayout.delegate = self
         cardsView.collectionViewLayout = cardLayout
         cardsView.bounces = true
+        cardsView.alwaysBounceVertical = true
         cardsView.delegate = self
         
         panGesture = UIPanGestureRecognizer(target: self, action:#selector(self.pannedCard))
