@@ -89,10 +89,10 @@ class CardsManager: NSObject, CardLayoutDelegate {
         guard let cardsView = self.collectionView else {
             return
         }
-        
         let cardLayout = CardLayout()
         cardLayout.delegate = self
         cardsView.collectionViewLayout = cardLayout
+        cardsView.bounces = true
         cardsView.delegate = self
         
         panGesture = UIPanGestureRecognizer(target: self, action:#selector(self.pannedCard))
@@ -230,7 +230,7 @@ extension CardsManager: UICollectionViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print("CardManager SCROLLVIEWDIDSCROLL")
 
-            if scrollView.contentOffset.y < 0 {
+            if scrollView.contentOffset.y < -10 {
                 panGesture.isEnabled = true
                 scrollView.isScrollEnabled = false
             }
