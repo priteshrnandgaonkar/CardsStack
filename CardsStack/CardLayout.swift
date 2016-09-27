@@ -17,12 +17,12 @@ internal protocol CardLayoutDelegate {
 
 public class CardLayout: UICollectionViewLayout {
 
-   internal var delegate: CardLayoutDelegate!
-   private var contentHeight: CGFloat = 0.0
+    internal var delegate: CardLayoutDelegate!
+    var contentHeight: CGFloat = 0.0
 
-   private var cachedAttributes = [UICollectionViewLayoutAttributes]()
+    var cachedAttributes = [UICollectionViewLayoutAttributes]()
     
-   public override var collectionViewContentSize: CGSize {
+    public override var collectionViewContentSize: CGSize {
         let collection = collectionView!
         let width = collection.bounds.size.width
         let height = contentHeight
@@ -31,6 +31,8 @@ public class CardLayout: UICollectionViewLayout {
     }
     
     override public func prepare() {
+        print("Prepare")
+
         cachedAttributes.removeAll()
         contentHeight = delegate.cardState == .Expanded ? 0.0 : CGFloat(delegate.configuration.collapsedHeight + delegate.fractionToMove)
         
@@ -52,6 +54,7 @@ public class CardLayout: UICollectionViewLayout {
     }
     
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        print("CardManager Layout attributes")
 
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
         
@@ -65,10 +68,13 @@ public class CardLayout: UICollectionViewLayout {
     }
     
     override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        print("SHOULD INVALIDATE")
+
         return true
     }
     
     override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        print("attributes for item at indexpath")
         return cachedAttributes[indexPath.item]
     }
     

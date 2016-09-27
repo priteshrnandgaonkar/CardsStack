@@ -15,7 +15,7 @@ internal enum CardState {
     case Collapsed
 }
 
-internal class CardsManager: NSObject, CardLayoutDelegate {
+class CardsManager: NSObject, CardLayoutDelegate {
     
     var fractionToMove:Float = 0
     var cardState: CardState {
@@ -99,9 +99,12 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
         cardsView.addGestureRecognizer(tapGesture)
         panGesture.isEnabled = cardState == .Collapsed
         tapGesture.isEnabled = cardState == .Collapsed
+        print("CardManager Initialised")
     }
     
     func tappedCard(tapGesture: UITapGestureRecognizer) {
+        print("CardManager Tapped")
+
         guard let cardsCollectionView = collectionView else {
             return
         }
@@ -109,6 +112,8 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
     }
     
     func pannedCard(panGesture: UIPanGestureRecognizer) {
+        print("CardManager Panned")
+
         guard let collectionView = self.collectionView else {
             return
         }
