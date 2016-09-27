@@ -2,27 +2,27 @@
 //  CardLayout.swift
 //  DynamicStackOfCards
 //
-//  Created by housing on 9/16/16.
+//  Created by Pritesh Nandgaonkar on 9/16/16.
 //  Copyright © 2016 pritesh. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol CardLayoutDelegate {
+internal protocol CardLayoutDelegate {
     var fractionToMove: Float { get }
     var cardState: CardState { get }
     var configuration: Configuration { get }
 }
 
-class CardLayout: UICollectionViewLayout {
+public class CardLayout: UICollectionViewLayout {
 
-    var delegate: CardLayoutDelegate!
-    var contentHeight: CGFloat = 0.0
+   internal var delegate: CardLayoutDelegate!
+   private var contentHeight: CGFloat = 0.0
 
-    var cachedAttributes = [UICollectionViewLayoutAttributes]()
+   private var cachedAttributes = [UICollectionViewLayoutAttributes]()
     
-    override var collectionViewContentSize: CGSize {
+   public override var collectionViewContentSize: CGSize {
         let collection = collectionView!
         let width = collection.bounds.size.width
         let height = contentHeight
@@ -30,7 +30,7 @@ class CardLayout: UICollectionViewLayout {
         return CGSize(width: width, height: height)
     }
     
-    override func prepare() {
+    override public func prepare() {
         cachedAttributes.removeAll()
         contentHeight = delegate.cardState == .Expanded ? 0.0 : CGFloat(delegate.configuration.collapsedHeight + delegate.fractionToMove)
         
@@ -51,7 +51,7 @@ class CardLayout: UICollectionViewLayout {
         }
     }
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
 
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
         
@@ -64,15 +64,15 @@ class CardLayout: UICollectionViewLayout {
         return layoutAttributes
     }
     
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return cachedAttributes[indexPath.item]
     }
     
-    func frameFor(index: Int, cardState: CardState, translation: Float) -> CGRect {
+   private func frameFor(index: Int, cardState: CardState, translation: Float) -> CGRect {
         var frame = CGRect(origin: CGPoint(x: CGFloat(delegate.configuration.leftSpacing), y:0), size: CGSize(width: UIScreen.main.bounds.width - CGFloat(delegate.configuration.leftSpacing + delegate.configuration.rightSpacing), height: CGFloat(delegate.configuration.cardHeight)))
         var frameOrigin = frame.origin
         switch cardState {
