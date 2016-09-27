@@ -179,7 +179,6 @@ class CardsManager: NSObject, CardLayoutDelegate {
                     }, completion: { (finished) in
                         self.triggerStateCallBack()
                 })
-    
             default:
                 break
             }
@@ -230,7 +229,7 @@ extension CardsManager: UICollectionViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print("CardManager SCROLLVIEWDIDSCROLL")
 
-            if scrollView.contentOffset.y < -10 {
+            if scrollView.contentOffset.y < 0 {
                 panGesture.isEnabled = true
                 scrollView.isScrollEnabled = false
             }
