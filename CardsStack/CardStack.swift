@@ -53,7 +53,7 @@ public class CardStack {
             cardsManager.delegate = delegate
         }
     }
-    private var cardsManager = CardsManager()
+    internal var cardsManager = CardsManager()
     
     internal(set) var position: CardsPosition
     
