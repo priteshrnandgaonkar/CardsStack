@@ -15,6 +15,4 @@ FOUNDATION_EXPORT double CardsStackVersionNumber;
 FOUNDATION_EXPORT const unsigned char CardsStackVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <CardsStack/PublicHeader.h>
-#import <CardsStack/CardLayout.h>
-#import <CardsStack/CardStack.h>
 
