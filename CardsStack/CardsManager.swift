@@ -89,10 +89,15 @@ class CardsManager: NSObject, CardLayoutDelegate {
         guard let cardsView = self.collectionView else {
             return
         }
-        cardsView.delegate = self
-        if let cardLayout = cardsView.collectionViewLayout as? CardLayout {
-            cardLayout.delegate = self
-        }
+//        cardsView.delegate = self
+//        if let cardLayout = cardsView.collectionViewLayout as? CardLayout {
+//            cardLayout.delegate = self
+//        }
+//        
+        let cardLayout = CardLayout()
+        cardLayout.delegate = self
+        cardsView.collectionViewLayout = cardLayout
+        
         panGesture = UIPanGestureRecognizer(target: self, action:#selector(self.pannedCard))
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tappedCard))
         cardsView.addGestureRecognizer(panGesture)

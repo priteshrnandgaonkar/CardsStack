@@ -22,6 +22,14 @@ public class CardLayout: UICollectionViewLayout {
 
     var cachedAttributes = [UICollectionViewLayoutAttributes]()
     
+    override init() {
+        super.init()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public override var collectionViewContentSize: CGSize {
         let collection = collectionView!
         let width = collection.bounds.size.width
