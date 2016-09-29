@@ -1,16 +1,16 @@
 # CardStack [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
-CardStack converts your `UICollectionView` to an awesome stack of cards using custom `UICollectionViewLayout`
+CardStack converts your `UICollectionView` to an awesome stack of cards using custom `UICollectionViewLayout`, written in Swift 3.
 
 ## What is CardStack? 💫 ✨💥⭐️
 
-Talk is cheap, lets look at the gif 
+Talk is cheap, lets look at the gif. 
 
 ![Basic Interaction](Documentation/BasicCardStackInteraction.gif)
 
 
-The Basic interaction with the CardStack is dragging up the cards till they are unraveled. But hold on, for the impatient users, there is one more interaction, you can drag a little and the cards will unwind or wind
+The Basic interaction with the CardStack is dragging up the cards till they are unraveled. But hold on, for the impatient users, there is one more interaction, you can drag a little and the cards will unwind or wind.
 
 ![Lazy Interaction](Documentation/LazyInteraction.gif)
 
