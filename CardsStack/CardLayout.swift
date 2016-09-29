@@ -39,8 +39,6 @@ class CardLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
-        print("Prepare")
-
         cachedAttributes.removeAll()
         contentHeight = delegate.cardState == .Expanded ? 0.0 : CGFloat(delegate.configuration.collapsedHeight + delegate.fractionToMove)
         
@@ -62,7 +60,6 @@ class CardLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        print("CardManager Layout attributes")
 
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
         
@@ -76,13 +73,10 @@ class CardLayout: UICollectionViewLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        print("SHOULD INVALIDATE")
-
         return true
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        print("attributes for item at indexpath")
         return cachedAttributes[indexPath.item]
     }
     

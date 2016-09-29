@@ -102,12 +102,9 @@ class CardsManager: NSObject, CardLayoutDelegate {
         cardsView.addGestureRecognizer(tapGesture)
         panGesture.isEnabled = cardState == .Collapsed
         tapGesture.isEnabled = cardState == .Collapsed
-        print("CardManager Initialised")
     }
     
     func tappedCard(tapGesture: UITapGestureRecognizer) {
-        print("CardManager Tapped")
-
         guard let cardsCollectionView = collectionView else {
             return
         }
@@ -115,7 +112,6 @@ class CardsManager: NSObject, CardLayoutDelegate {
     }
     
     func pannedCard(panGesture: UIPanGestureRecognizer) {
-        print("CardManager Panned")
 
         guard let collectionView = self.collectionView else {
             return
@@ -228,7 +224,6 @@ class CardsManager: NSObject, CardLayoutDelegate {
 extension CardsManager: UICollectionViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("CardManager SCROLLVIEWDIDSCROLL")
 
             if scrollView.contentOffset.y < 0 {
                 panGesture.isEnabled = true
@@ -237,13 +232,11 @@ extension CardsManager: UICollectionViewDelegate {
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("CardManager DID SELECT AT ITEM AT INDEX PATH")
 
         delegate?.cardsCollectionView?(collectionView, didSelectItemAt: indexPath)
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print("CardManager WILLDISPLAY")
         delegate?.cardsCollectionView?(collectionView, willDisplay: cell, forItemAt: indexPath)
     }
 }
