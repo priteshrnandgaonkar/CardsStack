@@ -2,7 +2,7 @@
 //  CardsStackTests.swift
 //  CardsStackTests
 //
-//  Created by housing on 9/24/16.
+//  Created by Pritesh Nandgaonkar on 9/24/16.
 //  Copyright © 2016 Pritesh. All rights reserved.
 //
 

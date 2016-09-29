@@ -2,14 +2,14 @@
 //  CardLayout.swift
 //  DynamicStackOfCards
 //
-//  Created by housing on 9/16/16.
+//  Created by Pritesh Nandgaonkar on 9/16/16.
 //  Copyright © 2016 pritesh. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol CardLayoutDelegate {
+internal protocol CardLayoutDelegate {
     var fractionToMove: Float { get }
     var cardState: CardState { get }
     var configuration: Configuration { get }
@@ -21,6 +21,14 @@ class CardLayout: UICollectionViewLayout {
     var contentHeight: CGFloat = 0.0
 
     var cachedAttributes = [UICollectionViewLayoutAttributes]()
+    
+    override init() {
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override var collectionViewContentSize: CGSize {
         let collection = collectionView!

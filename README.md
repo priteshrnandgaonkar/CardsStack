@@ -1,6 +1,7 @@
-# CardStack
+# CardStack [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-CardStack converts your `UICollectionView` to an awesome stack of cards
+
+CardStack converts your `UICollectionView` to an awesome stack of cards using custom `UICollectionViewLayout`
 
 ## What is CardStack? 💫 ✨💥⭐️
 
@@ -91,13 +92,13 @@ With this delegate you can get the hooks to specific events
 }
 
 ```
-For listening to thiscall backs add assign a delegate to `CardsStack`
+For listening to this call backs assign a delegate to `CardsStack`
 
 ``` swift
 cardsStack.delegate = self
 ```
 
-The last two functions leads are the same as the delegate function for collection view.
+The last two functions are the same as the delegate function for collection view.
 
 The first function gives the hook to the `CardStacks` position change
 
@@ -127,7 +128,7 @@ public func changeCardsPosition(to position: CardsPosition) {
 You can checkout the example and play around with it to get hang of the API's
 
 ## TODO
-- [ ] Carthage Support
+- [x] Carthage Support
 - [ ] CocoaPods Support
 - [ ] SwiftPM Support
 - [ ] Watch, TvOS Targets 

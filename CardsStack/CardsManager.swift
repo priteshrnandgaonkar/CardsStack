@@ -2,7 +2,7 @@
 //  CardsManager.swift
 //  DynamicStackOfCards
 //
-//  Created by housing on 9/24/16.
+//  Created by Pritesh Nandgaonkar on 9/24/16.
 //  Copyright © 2016 pritesh. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ internal enum CardState {
     case Collapsed
 }
 
-internal class CardsManager: NSObject, CardLayoutDelegate {
+class CardsManager: NSObject, CardLayoutDelegate {
     
     var fractionToMove:Float = 0
     var cardState: CardState {
@@ -89,10 +89,13 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
         guard let cardsView = self.collectionView else {
             return
         }
+        let cardLayout = CardLayout()
+        cardLayout.delegate = self
+        cardsView.collectionViewLayout = cardLayout
+        cardsView.bounces = true
+        cardsView.alwaysBounceVertical = true
         cardsView.delegate = self
-        if let cardLayout = cardsView.collectionViewLayout as? CardLayout {
-            cardLayout.delegate = self
-        }
+        
         panGesture = UIPanGestureRecognizer(target: self, action:#selector(self.pannedCard))
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tappedCard))
         cardsView.addGestureRecognizer(panGesture)
@@ -109,6 +112,7 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
     }
     
     func pannedCard(panGesture: UIPanGestureRecognizer) {
+
         guard let collectionView = self.collectionView else {
             return
         }
@@ -172,7 +176,6 @@ internal class CardsManager: NSObject, CardLayoutDelegate {
                     }, completion: { (finished) in
                         self.triggerStateCallBack()
                 })
-    
             default:
                 break
             }
@@ -222,13 +225,14 @@ extension CardsManager: UICollectionViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
-            if scrollView.contentOffset.y < -10 {
+            if scrollView.contentOffset.y < 0 {
                 panGesture.isEnabled = true
                 scrollView.isScrollEnabled = false
             }
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
         delegate?.cardsCollectionView?(collectionView, didSelectItemAt: indexPath)
     }
     
