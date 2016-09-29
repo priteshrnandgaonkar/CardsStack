@@ -14,10 +14,10 @@
 		8432DC431D96D1BD00A3A0E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8432DC411D96D1BD00A3A0E2 /* LaunchScreen.storyboard */; };
 		8432DC4E1D96D1BE00A3A0E2 /* CardsStackExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC4D1D96D1BE00A3A0E2 /* CardsStackExampleTests.swift */; };
 		8432DC591D96D1BE00A3A0E2 /* CardsStackExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC581D96D1BE00A3A0E2 /* CardsStackExampleUITests.swift */; };
-		8432DC741D96D2BF00A3A0E2 /* CardsStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432DC6D1D96D21400A3A0E2 /* CardsStack.framework */; };
-		8432DC751D96D2BF00A3A0E2 /* CardsStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8432DC6D1D96D21400A3A0E2 /* CardsStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8432DC7A1D96D50100A3A0E2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC791D96D50100A3A0E2 /* CardView.swift */; };
 		8432DC801D96E6B900A3A0E2 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432DC7F1D96E6B900A3A0E2 /* Pokemon.swift */; };
+		CAFBE0741D9D57FE00AF931F /* CardsStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFBE0711D9D57F300AF931F /* CardsStack.framework */; };
+		CAFBE0751D9D57FE00AF931F /* CardsStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CAFBE0711D9D57F300AF931F /* CardsStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,23 +35,23 @@
 			remoteGlobalIDString = 8432DC341D96D1BD00A3A0E2;
 			remoteInfo = CardsStackExample;
 		};
-		8432DC6C1D96D21400A3A0E2 /* PBXContainerItemProxy */ = {
+		CAFBE0701D9D57F300AF931F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8432DC671D96D21400A3A0E2 /* CardsStack.xcodeproj */;
+			containerPortal = CAFBE06B1D9D57F300AF931F /* CardsStack.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8432DC0C1D96D11400A3A0E2;
 			remoteInfo = CardsStack;
 		};
-		8432DC6E1D96D21400A3A0E2 /* PBXContainerItemProxy */ = {
+		CAFBE0721D9D57F300AF931F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8432DC671D96D21400A3A0E2 /* CardsStack.xcodeproj */;
+			containerPortal = CAFBE06B1D9D57F300AF931F /* CardsStack.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8432DC151D96D11400A3A0E2;
 			remoteInfo = CardsStackTests;
 		};
-		8432DC761D96D2BF00A3A0E2 /* PBXContainerItemProxy */ = {
+		CAFBE0761D9D57FE00AF931F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8432DC671D96D21400A3A0E2 /* CardsStack.xcodeproj */;
+			containerPortal = CAFBE06B1D9D57F300AF931F /* CardsStack.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8432DC0B1D96D11400A3A0E2;
 			remoteInfo = CardsStack;
@@ -65,7 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8432DC751D96D2BF00A3A0E2 /* CardsStack.framework in Embed Frameworks */,
+				CAFBE0751D9D57FE00AF931F /* CardsStack.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,9 +86,9 @@
 		8432DC541D96D1BE00A3A0E2 /* CardsStackExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsStackExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432DC581D96D1BE00A3A0E2 /* CardsStackExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsStackExampleUITests.swift; sourceTree = "<group>"; };
 		8432DC5A1D96D1BE00A3A0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8432DC671D96D21400A3A0E2 /* CardsStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CardsStack.xcodeproj; path = ../CardsStack/CardsStack.xcodeproj; sourceTree = "<group>"; };
 		8432DC791D96D50100A3A0E2 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8432DC7F1D96E6B900A3A0E2 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		CAFBE06B1D9D57F300AF931F /* CardsStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CardsStack.xcodeproj; path = ../CardsStack.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8432DC741D96D2BF00A3A0E2 /* CardsStack.framework in Frameworks */,
+				CAFBE0741D9D57FE00AF931F /* CardsStack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,16 +174,16 @@
 		8432DC661D96D1DD00A3A0E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8432DC671D96D21400A3A0E2 /* CardsStack.xcodeproj */,
+				CAFBE06B1D9D57F300AF931F /* CardsStack.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8432DC681D96D21400A3A0E2 /* Products */ = {
+		CAFBE06C1D9D57F300AF931F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8432DC6D1D96D21400A3A0E2 /* CardsStack.framework */,
-				8432DC6F1D96D21400A3A0E2 /* CardsStackTests.xctest */,
+				CAFBE0711D9D57F300AF931F /* CardsStack.framework */,
+				CAFBE0731D9D57F300AF931F /* CardsStackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8432DC771D96D2BF00A3A0E2 /* PBXTargetDependency */,
+				CAFBE0771D9D57FE00AF931F /* PBXTargetDependency */,
 			);
 			name = CardsStackExample;
 			productName = CardsStackExample;
@@ -288,8 +288,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 8432DC681D96D21400A3A0E2 /* Products */;
-					ProjectRef = 8432DC671D96D21400A3A0E2 /* CardsStack.xcodeproj */;
+					ProductGroup = CAFBE06C1D9D57F300AF931F /* Products */;
+					ProjectRef = CAFBE06B1D9D57F300AF931F /* CardsStack.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -302,18 +302,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8432DC6D1D96D21400A3A0E2 /* CardsStack.framework */ = {
+		CAFBE0711D9D57F300AF931F /* CardsStack.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CardsStack.framework;
-			remoteRef = 8432DC6C1D96D21400A3A0E2 /* PBXContainerItemProxy */;
+			remoteRef = CAFBE0701D9D57F300AF931F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8432DC6F1D96D21400A3A0E2 /* CardsStackTests.xctest */ = {
+		CAFBE0731D9D57F300AF931F /* CardsStackTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CardsStackTests.xctest;
-			remoteRef = 8432DC6E1D96D21400A3A0E2 /* PBXContainerItemProxy */;
+			remoteRef = CAFBE0721D9D57F300AF931F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -386,10 +386,10 @@
 			target = 8432DC341D96D1BD00A3A0E2 /* CardsStackExample */;
 			targetProxy = 8432DC551D96D1BE00A3A0E2 /* PBXContainerItemProxy */;
 		};
-		8432DC771D96D2BF00A3A0E2 /* PBXTargetDependency */ = {
+		CAFBE0771D9D57FE00AF931F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CardsStack;
-			targetProxy = 8432DC761D96D2BF00A3A0E2 /* PBXContainerItemProxy */;
+			targetProxy = CAFBE0761D9D57FE00AF931F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
