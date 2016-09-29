@@ -1,4 +1,4 @@
-# CardStack [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# CardStack [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![Swift 3 compatible](Documentation/Swift-3.0-orange.svg)
 
 
 CardStack converts your `UICollectionView` to an awesome stack of cards using custom `UICollectionViewLayout`
