@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A66143EEE51951E22CF314759A046F3FF619A563",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A66143EEE51951E22CF314759A046F3FF619A563" : 9223372036854775807,
+    "756A0D8326C6250D4548B9F479EC83CFE515F3D7" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CD8ED545-8221-43A7-A2C9-DF4FE0622F7A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A66143EEE51951E22CF314759A046F3FF619A563" : "CardsStackExample\/",
+    "756A0D8326C6250D4548B9F479EC83CFE515F3D7" : "CardsStack\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CardsStackExample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CardsStackExample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/priteshrnandgaonkar\/CardsStack.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "756A0D8326C6250D4548B9F479EC83CFE515F3D7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/priteshrnandgaonkar\/CardsStackExample.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A66143EEE51951E22CF314759A046F3FF619A563"
+    }
+  ]
+}
