@@ -1,0 +1,3 @@
+[submodule "CardsStackExample"]
+	path = CardsStackExample
+	url = https://github.com/priteshrnandgaonkar/CardsStackExample.git
