@@ -17,7 +17,7 @@ The Basic interaction with the CardStack is dragging up the cards till they are 
 
 ## How to use it?
 
-There ar 4 basic components required by CardStack to function. To initialise the `CardsStack` it needs the `CardsPosition`, `Configuration` along with `UICollectionView` and its height constraint i.e `NSLayoutConstraint` 
+There are 4 basic components required by CardStack to function. To initialise the `CardsStack` it needs the `CardsPosition`, `Configuration` along with `UICollectionView` and its height constraint i.e `NSLayoutConstraint` 
 
 Initialise `CardsStack` as follows
 
