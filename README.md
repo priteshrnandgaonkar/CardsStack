@@ -14,16 +14,60 @@ The Basic interaction with the CardStack is dragging up the cards till they are 
 
 ![Lazy Interaction](Documentation/LazyInteraction.gif)
 
+## Installation
+### CocoaPods
+
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```
+$ gem install cocoapods
+
+```
+To integrate CardsStack into your Xcode project using CocoaPods, specify it in your Podfile:
+
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'CardsStack', '0.2.1'
+end
+
+```
+Then, run the following command:
+
+```
+$ pod install
+
+```
+### Carthage
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```
+$ brew update
+$ brew install carthage
+
+```
+To integrate CardsStack into your Xcode project using Carthage, specify it in your Cartfile:
+
+```
+github "priteshrnandgaonkar/CardsStack" == 0.2.1
+
+```
+Run `carthage update` to build the framework and drag the built CardsStack.framework into your Xcode project.
 
 ## How to use it?
 
-There are 4 basic components required by CardStack to function. To initialise the `CardsStack` it needs the `CardsPosition`, `Configuration` along with `UICollectionView` and its height constraint i.e `NSLayoutConstraint`. 
+There are 4 basic components required by CardsStack to function. To initialise the `CardStack` it needs the `CardsPosition`, `Configuration` along with `UICollectionView` and its height constraint i.e `NSLayoutConstraint`. 
 
-Initialise `CardsStack` as follows
+Initialise `CardStack` as follows
 
 ``` swift
 let config = Configuration(cardOffset: 40, collapsedHeight: 200, expandedHeight: 500, cardHeight: 200, downwardThreshold: 20, upwardThreshold: 20, leftSpacing: 8.0, rightSpacing: 8.0, verticalSpacing: 8.0)
-let cardsStack = CardsStack(cardsState: .Collapsed, configuration: config, collectionView: collectionView, collectionViewHeight: heightConstraint)
+let cardStack = CardStack(cardsState: .Collapsed, configuration: config, collectionView: collectionView, collectionViewHeight: heightConstraint)
 
 ```
 ### Configuration
@@ -95,7 +139,7 @@ With this delegate you can get the hooks to specific events.
 For listening to this call-backs assign a delegate to `CardsStack`.
 
 ``` swift
-cardsStack.delegate = self
+cardStack.delegate = self
 ```
 
 The last two functions are the same as the delegate function for collection view.
@@ -113,7 +157,7 @@ So you can use this hook to open cards, like this
 ``` swift
 
 func tappedOnCardsStack(cardsCollectionView: UICollectionView) {
-        cardsStack.changeCardsPosition(to: .Expanded)
+        cardStack.changeCardsPosition(to: .Expanded)
     }
 
 ```
@@ -131,7 +175,7 @@ You can also find the [example](https://github.com/priteshrnandgaonkar/CardsStac
 
 ## TODO
 - [x] Carthage Support
-- [ ] CocoaPods Support
+- [x] CocoaPods Support
 - [ ] SwiftPM Support
 - [ ] Watch, TvOS Targets 
 
