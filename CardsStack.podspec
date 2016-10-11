@@ -9,6 +9,6 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios, "8.0"
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/priteshrnandgaonkar/CardsStack.git", tag: "0.2.1", submodules: true }
+  spec.source = { git: "https://github.com/priteshrnandgaonkar/CardsStack.git", tag: "0.2.1" }
   spec.source_files = "CardsStack/**/*.{h,swift}"
 end
