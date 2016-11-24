@@ -173,6 +173,8 @@ You can checkout the example in the project and play around with it to get hang 
 
 You can also find the [example](https://github.com/priteshrnandgaonkar/CardsStackExample) with CardsStack imported through Carthage.
 
+You can also checkout the my [blog](https://priteshrnandgaonkar.github.io/Details-of-CardsStack/) discussing the details of the library.
+
 ## TODO
 - [x] Carthage Support
 - [x] CocoaPods Support
