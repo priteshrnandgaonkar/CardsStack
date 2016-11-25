@@ -29,6 +29,8 @@ class ViewController: UIViewController {
 
         cardsStack = CardStack(cardsState: cardState, configuration: config, collectionView: collectionView, collectionViewHeight: heightConstraint)
         cardsStack.delegate = self
+        automaticallyAdjustsScrollViewInsets = false
+
     }
 
     override func didReceiveMemoryWarning() {
