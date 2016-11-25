@@ -29,8 +29,9 @@ class ViewController: UIViewController {
 
         cardsStack = CardStack(cardsState: cardState, configuration: config, collectionView: collectionView, collectionViewHeight: heightConstraint)
         cardsStack.delegate = self
-        automaticallyAdjustsScrollViewInsets = false
-
+       
+        //Uncomment the following line if this viewcontroller is embeded in the navigationcontroller
+        //automaticallyAdjustsScrollViewInsets = false
     }
 
     override func didReceiveMemoryWarning() {
